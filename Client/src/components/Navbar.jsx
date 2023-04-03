@@ -6,6 +6,13 @@ export default function Navbar() {
         <Link to="/" className="header-text">
           Workout Buddy
         </Link>
+        <nav>
+          <div>
+            <Link to='/login'>Login</Link>
+            <Link to='/signup'>Sign Up</Link>
+
+          </div>
+        </nav>
       </div>
     </header>
   );
