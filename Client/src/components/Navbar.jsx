@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import {useSignup} from '../hooks/useSignup'
+import {useLogout} from '../hooks/useLogout'
 export default function Navbar() {
-  const logout = useSignup()
+  const {logout} = useLogout()
 
   const handleClick = () => {
     logout()
