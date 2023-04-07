@@ -14,6 +14,10 @@ export const workoutsReducer = (state, action) => {
           return {
             workouts: state.workouts.filter((w) => w._id !== action.payload._id)
           }
+        case 'LOGOUT_WORKOUT':
+          return {
+            workouts: null
+          }
         default:
             return state
     }
