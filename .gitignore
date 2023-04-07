@@ -12,6 +12,7 @@ Server/node_modules
 
 Server/.env
 Client/.env
+Client/.env.local
 
 dist
 dist-ssr

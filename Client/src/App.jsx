@@ -4,8 +4,7 @@ import Navbar from './components/Navbar'
 import Login from '../src/pages/Login'
 import SignUp from '../src/pages/SignUp'
 import {useAuthContext} from '../src/hooks/useAuthContext'
-import * as dotenv from "dotenv";
-dotenv.config();
+
 
 function App() {
   const {user} = useAuthContext()

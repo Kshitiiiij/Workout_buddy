@@ -37,7 +37,7 @@ export default function WourkoutForm() {
         setError('You must be logged in to create a workout')
         return
       }
-      const response = await fetch(`${process.env.API_NAME}/api/workouts`, { 
+      const response = await fetch(`https://workout-bud.vercel.app/api/workouts`, { 
         method: "POST",
         body: JSON.stringify(values),
         headers: {

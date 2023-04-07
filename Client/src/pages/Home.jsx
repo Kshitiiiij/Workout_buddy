@@ -9,7 +9,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch(`${process.env.API_NAME}/api/workouts`, {
+      const response = await fetch(`https://workout-bud.vercel.app/api/workouts`, {
         headers: {
           'AUTHORIZATION': `Bearer ${user.token}`
         }
