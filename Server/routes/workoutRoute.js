@@ -1,7 +1,10 @@
 import express from "express";
+import  {requireAuth}  from "../middleware/requireAuth.js";
 import {getWorkouts, getWorkout, createWorkout, deleteWorkout, updateWorkout} from '../controller/workoutController.js'
 
 const router = express.Router()
+
+router.use(requireAuth) // this middleware will run for all routes in this file
 
 // GET all workouts
 router.get('/', getWorkouts)
