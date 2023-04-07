@@ -8,7 +8,7 @@ export default function WorkoutDetails({ _id, title, reps, load, createdAt}) {
   const {dispatch} = useWorkoutContext()
   const handleClick = async() => {
     if(!user) return
-    const response = await fetch(`${process.env.VERCEL_API}/api/workouts` +  _id, 
+    const response = await fetch(`${process.env.API_NAME}/api/workouts` +  _id, 
     {method: 'DELETE',
     headers: {
       'AUTHORIZATION': `Bearer ${user.token}`

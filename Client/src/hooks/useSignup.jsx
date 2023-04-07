@@ -10,7 +10,7 @@ export const useSignup = () => {
         setIsLoading(true)
         setError(null)
 
-      const response = await fetch(`${process.env.VERCEL_API}/api/user/signup`, { 
+      const response = await fetch(`${process.env.API_NAME}/api/user/signup`, { 
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({email, password})
