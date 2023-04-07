@@ -1,6 +1,8 @@
 import { useFormik } from "formik";
 import { useState } from "react";
 import { useWorkoutContext } from "../hooks/useWorkoutsContext";
+import {useAuthContext} from '../hooks/useAuthContext'
+
 
 const validate = (values) => {
   const errors = {};
@@ -20,6 +22,7 @@ const validate = (values) => {
   }
 };
 export default function WourkoutForm() {
+  const {user} = useAuthContext()
   const [error, setError] = useState(null);
   const { dispatch } = useWorkoutContext();
   const formik = useFormik({
@@ -30,12 +33,18 @@ export default function WourkoutForm() {
     },
     validate,
     onSubmit: async (values) => {
+      if(!user) {
+        setError('You must be logged in to create a workout')
+        return
+      }
       const response = await fetch("http://localhost:3000/api/workouts", {
         method: "POST",
         body: JSON.stringify(values),
         headers: {
           "Content-Type": "application/json",
+          'AUTHORIZATION': `Bearer ${user.token}`
         },
+        
       });
       const json = await response.json();
       if (!response.ok) {
