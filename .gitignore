@@ -11,7 +11,7 @@ Client/node_modules
 Server/node_modules
 
 Server/.env
-
+Client/.env
 
 dist
 dist-ssr
