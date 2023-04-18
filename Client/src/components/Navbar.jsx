@@ -24,9 +24,9 @@ export default function Navbar() {
             <button onClick={handleClick}>Logout</button>
           </div>}
           
-          {!user && <div>
+          {!user && <div className="Nav_comp">
             <Link to='/login'>Login</Link>
-            <Link to='/signup'>Sign Up</Link>
+            <Link to='/signup'>SignUp</Link>
 
           </div> }
           

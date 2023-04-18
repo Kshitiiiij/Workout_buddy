@@ -20,6 +20,7 @@ header {
 }
 header .container {
   max-width: 1400px;
+  min-width: 200px;
   margin: 0 auto;
   padding: 10px 20px;
   display: flex;
@@ -133,6 +134,11 @@ form.signup, form.login {
 @media screen and (max-width: 768px) {
   .home {
     grid-template-columns: 1fr;
+  }
+
+  header {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
   
