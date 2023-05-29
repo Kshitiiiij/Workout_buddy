@@ -44,9 +44,7 @@ export const signupUser = async (req, res) => {
   if (!validator.isEmail(email)) {
     return res.status(400).json({ error: "Not an valid email" });
   }
-  if (!validator.isStrongPassword(password)) {
-    return res.status(400).json({ error: "Password not strong enough" });
-  }
+ 
 
   try {
     const exists = await User.findOne({ email });
